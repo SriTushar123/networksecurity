@@ -10,7 +10,7 @@ class TrainingPipelineConfig:
         timestamp=timestamp.strftime("%m_%d_%Y_%H_%M_%S")
         self.pipeline_name=training_pipeline.PIPELINE_NAME
         self.artifact_name=training_pipeline.ARTIFACT_DIR
-        self.artifact_dir=os.path.join(self.artifact_name,timestamp)
+        self.artifact_dir=os.path.join(self.artifact_name)
         self.model_dir=os.path.join("final_model")
 
 class DataIngestionConfig:
@@ -27,4 +27,6 @@ class DataIngestionConfig:
         self.testing_file_path=os.path.join(
             self.data_ingestion_dir,training_pipeline.DATA_INGESTION_INGESTED_DIR,training_pipeline.TEST_FILE_NAME
         )
-        self.train_test_split_ratio=training_pipeline.DATA_INGESTION_TRAIN_TEST_SPLIT_RATION
+        self.train_test_split_ratio=training_pipeline.DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO
+        self.database_name=training_pipeline.DATA_INGESTION_DATABASE_NAME
+        self.collection_name=training_pipeline.DATA_INGESTION_COLLECTION_NAME
